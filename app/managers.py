@@ -38,7 +38,7 @@ class ActorManager:
 
 
 # if __name__ == "__main__":
-#     manager = ActorManager("cinema_db.sqlite", "actors")
+#     manager = ActorManager("cinema.sqlite", "actors")
 #     manager._execute("""
 #         CREATE TABLE IF NOT EXISTS actors (
 #             id INTEGER PRIMARY KEY AUTOINCREMENT,
