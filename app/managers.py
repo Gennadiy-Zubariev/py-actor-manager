@@ -18,7 +18,7 @@ class ActorManager:
     def create(self, first_name: str, last_name: str) -> None:
         self._execute(
             f"INSERT INTO {self.table_name} "
-            f"(first_name, Last_name) VALUES (?, ?)",
+            f"(first_name, last_name) VALUES (?, ?)",
             (first_name, last_name),
         )
 
@@ -35,3 +35,16 @@ class ActorManager:
 
     def delete(self, pk: int) -> None:
         self._execute(f"DELETE FROM {self.table_name} WHERE id = ?", (pk,))
+
+
+# if __name__ == "__main__":
+#     manager = ActorManager("cinema_db.sqlite", "actors")
+#     manager._execute("""
+#         CREATE TABLE IF NOT EXISTS actors (
+#             id INTEGER PRIMARY KEY AUTOINCREMENT,
+#             first_name TEXT NOT NULL,
+#             last_name TEXT NOT NULL
+#         )
+#     """)
+#     # manager.create("Gena", "Zubarev")
+#     print(manager.all())
